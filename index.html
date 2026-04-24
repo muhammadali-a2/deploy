@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Olala | Luxury Artisanal Fragrances</title>
+    <meta name="description" content="Olala - A royal collection of signature perfumes crafted with rare botanicals. Experience elegance in every drop.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#f3e1ad',
+                            DEFAULT: '#d4af37',
+                            dark: '#aa881c',
+                        },
+                        royal: {
+                            black: '#050505',
+                            grey: '#121212',
+                            charcoal: '#1a1a1a',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'reveal': 'reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' },
+                        },
+                        reveal: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer components {
+            body { @apply bg-royal-black text-gray-300 font-sans; }
+            
+            /* Royal Gradient Text */
+            .text-gold-gradient {
+                @apply bg-clip-text text-transparent bg-gradient-to-b from-gold-light via-gold to-gold-dark;
+            }
+
+            /* Glassmorphism Luxury Card */
+            .luxury-card {
+                @apply bg-royal-grey border border-white/5 rounded-sm p-6 transition-all duration-700 hover:border-gold/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)];
+            }
+
+            /* Premium Button */
+            .btn-gold {
+                @apply relative overflow-hidden px-10 py-4 bg-gold text-black font-bold uppercase tracking-[0.2em] text-[10px]
+                       transition-all duration-500 hover:bg-gold-light hover:-translate-y-1 active:scale-95;
+            }
+
+            /* Scroll Reveal Helper */
+            .reveal { @apply opacity-0 translate-y-10 transition-all duration-1000; }
+            .reveal.active { @apply opacity-100 translate-y-0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 px-10 py-6 flex justify-between items-center bg-royal-black/80 backdrop-blur-lg border-b border-white/5">
+        <div class="text-2xl font-serif tracking-[0.4em] text-gold-gradient">OLALA</div>
+        <div class="hidden md:flex space-x-12 uppercase text-[10px] tracking-[0.3em] font-semibold">
+            <a href="#collections" class="hover:text-gold transition-colors">Collections</a>
+            <a href="#story" class="hover:text-gold transition-colors">Our Story</a>
+            <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+        </div>
+        <div class="flex items-center space-x-6">
+            <button aria-label="Cart" class="text-gold hover:scale-110 transition-transform">🛒</button>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="text-center z-10 px-4">
+            <p class="reveal active text-gold tracking-[0.6em] uppercase text-xs mb-6">Maison de Parfum</p>
+            <h1 class="reveal active delay-200 font-serif text-7xl md:text-9xl text-gold-gradient mb-8 leading-none">
+                Olala
+            </h1>
+            <p class="reveal active delay-300 max-w-lg mx-auto text-gray-500 italic font-serif text-lg mb-12">
+                "Where every scent tells a story of royalty."
+            </p>
+            <div class="reveal active delay-500">
+                <a href="#collections" class="btn-gold">Explore Collection</a>
+            </div>
+        </div>
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/10 rounded-full blur-[120px]"></div>
+        </div>
+    </header>
+
+    <section id="collections" class="py-32 px-10 max-w-7xl mx-auto">
+        <div class="reveal text-center mb-24">
+            <h2 class="font-serif text-4xl text-white mb-4">Signature Series</h2>
+            <div class="w-20 h-[1px] bg-gold mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <article class="reveal luxury-card group">
+                <div class="relative overflow-hidden mb-8 aspect-[4/5] bg-royal-charcoal flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=400" 
+                         alt="Midnight Oud" 
+                         class="floating w-48 object-contain transition-transform duration-1000 group-hover:scale-110">
+                </div>
+                <h3 class="font-serif text-2xl text-gold mb-2">Midnight Oud</h3>
+                <p class="text-gray-500 text-xs uppercase tracking-widest mb-6">Deep • Woody • Royal</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-gold-light font-bold">$240.00</span>
+                    <button class="text-[10px] tracking-widest uppercase border-b border-gold py-1 hover:text-white transition">Details</button>
+                </div>
+            </article>
+
+            <article class="reveal luxury-card group delay-200">
+                <div class="relative overflow-hidden mb-8 aspect-[4/5] bg-royal-charcoal flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=400" 
+                         alt="Golden Amber" 
+                         class="floating w-48 object-contain transition-transform duration-1000 group-hover:scale-110" 
+                         style="animation-delay: 1s;">
+                </div>
+                <h3 class="font-serif text-2xl text-gold mb-2">Golden Amber</h3>
+                <p class="text-gray-500 text-xs uppercase tracking-widest mb-6">Warm • Spicy • Rich</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-gold-light font-bold">$195.00</span>
+                    <button class="text-[10px] tracking-widest uppercase border-b border-gold py-1 hover:text-white transition">Details</button>
+                </div>
+            </article>
+
+            <article class="reveal luxury-card group delay-400">
+                <div class="relative overflow-hidden mb-8 aspect-[4/5] bg-royal-charcoal flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=400" 
+                         alt="Royal Rose" 
+                         class="floating w-48 object-contain transition-transform duration-1000 group-hover:scale-110"
+                         style="animation-delay: 2s;">
+                </div>
+                <h3 class="font-serif text-2xl text-gold mb-2">Royal Rose</h3>
+                <p class="text-gray-500 text-xs uppercase tracking-widest mb-6">Floral • Velvet • Fresh</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-gold-light font-bold">$210.00</span>
+                    <button class="text-[10px] tracking-widest uppercase border-b border-gold py-1 hover:text-white transition">Details</button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-royal-grey py-20 border-t border-white/5 px-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="font-serif text-3xl text-gold-gradient tracking-widest">OLALA</div>
+            <div class="text-center">
+                <p class="text-xs tracking-widest uppercase text-gray-500 mb-4">Stay Inspired</p>
+                <form class="flex border-b border-gold/30 pb-2">
+                    <input type="email" placeholder="Your Email" class="bg-transparent outline-none text-sm w-64">
+                    <button type="submit" class="text-gold px-4 hover:scale-110 transition">➔</button>
+                </form>
+            </div>
+            <div class="flex space-x-8 text-xs tracking-widest uppercase text-gray-500">
+                <a href="#" class="hover:text-gold transition">Instagram</a>
+                <a href="#" class="hover:text-gold transition">Privacy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
